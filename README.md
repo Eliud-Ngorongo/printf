@@ -15,3 +15,7 @@ This project is all about understanding variadic functions.
 1. Don’t forget to push your header file
 1. All your header files should be include guarded
 1. Note that we will not provide the _putchar function for this project
+
+## Authors
+1. MITAKEEY KIAGE
+1. ELIUD NGORONGO
