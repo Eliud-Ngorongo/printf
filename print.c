@@ -1,45 +1,36 @@
 #include "holberton.h"
 
 /**
- * _printf - produces output according to a format
- * @format: format string containing the characters and the specifier
+ * _printf - prints formated text
  *
- * Return: length of the formatted output string
+ * @format: text to be formated
+ * Return: Lenght of the text
  */
+
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, flags_t *);
-	const char *p;
-	va_list arguments;
-	flags_t flags = {0, 0, 0};
-
-	register int count = 0;
-
-	va_start(arguments, format);
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	for (p = format; *p; p++)
+	va_list args;
+	int size = 0;
+	print_fx fx[] = {
+		{"c", print_c},
+		{"s", print_s},
+		{"i", print_i},
+		{"d", print_i},
+		{"u", print_i},
+		{"b", print_b},
+		{"o", print_o},
+		{"x", print_x},
+		{"X", print_X},
+		{"r", print_r},
+		{"R", print_R},
+		{NULL, NULL}
+	};
+	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
-		if (*p == '%')
-		{
-			p++;
-			if (*p == '%')
-			{
-				count += _putchar('%');
-				continue;
-			}
-			while (get_flag(*p, &flags))
-				p++;
-			pfunc = get_print(*p);
-			count += (pfunc)
-				? pfunc(arguments, &flags)
-				: _printf("%%%c", *p);
-		} else
-			count += _putchar(*p);
+		return (-1);
 	}
-	_putchar(-1);
-	va_end(arguments);
-	return (count);
+	size = aux_func(format, args, fx);
+	va_end(args);
+	return (size);
 }
