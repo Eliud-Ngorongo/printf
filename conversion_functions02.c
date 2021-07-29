@@ -10,7 +10,7 @@ int print_x(va_list args)
 {
 	unsigned int n, buff[1024];
 	int i = 0, len = 0;
-	char p;
+	char a;
 
 	n = va_arg(args, int);
 	if (n < 1)
@@ -31,7 +31,7 @@ int print_x(va_list args)
 	}
 	for (i = len - 1; i >= 0; i--)
 	{
-		p = buff[i] + '0';
+		a = buff[i] + '0';
 		write(1, &p, 1);
 	}
 	return (len);
