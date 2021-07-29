@@ -7,7 +7,7 @@
 
 /**
  * struct format_func- functions of formating text
- *
+ *                     is of typedef 
  * @c: argument character
  * @f: formating function
  */
