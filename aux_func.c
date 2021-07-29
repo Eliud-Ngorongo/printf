@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * aux_func - selects the function to format text
+ * aux_func - selects the function to format the text
  *
  * @format: text to be formated
  * @args: list of arguments

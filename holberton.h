@@ -7,7 +7,7 @@
 
 /**
  * struct format_func- functions of formating text
- *                     is of typedef 
+ *
  * @c: argument character
  * @f: formating function
  */
@@ -24,12 +24,11 @@ int print_c(va_list args);
 int print_s(va_list args);
 int print_i(va_list args);
 int print_b(va_list args);
-int print_x(va_list args);
+int print_o(va_list args);
 int print_X(va_list args);
+int print_x(va_list args);
 int print_r(va_list args);
 int print_R(va_list args);
-int print_o(va_list args);
-
 int _putchar(char c);
 
 #endif

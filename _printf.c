@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * _printf - prints formatted text
+ * _printf - prints formated text
  *
  * @format: text to be formated
- * Return: text length
+ * Return: Lenght of the text
  */
 
 int _printf(const char *format, ...)
